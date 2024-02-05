@@ -1,12 +1,13 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 import requests
+import geocoder
 
 APIkey = "c4bb3958e6d110d2e0036c0027da9ad0"
 
 def index(request):
     location = get_location()
-    weather = get_current_weather(location["latitude"], location["longitude"], APIkey)
+    weather = get_current_weather(location[0], location[1], APIkey)
     context = {
         'weather': weather['weather'],
         'main': weather['main']
@@ -15,20 +16,12 @@ def index(request):
 
 #hier wird der jetzige Standort ausfindig gemacht
 
-def get_ip():
-    response = requests.get('https://api64.ipify.org?format=json').json()
-    return response["ip"]
-
 def get_location():
-    ip_address = get_ip()
-    response = requests.get(f'https://ipapi.co/{ip_address}/json/').json()
-    location_data = {
-        "ip": ip_address,
-        "latitude": response.get("latitude"),
-        "longitude": response.get("longitude")
-    }
-    print(response)
-    return location_data
+    response = requests.get('https://api64.ipify.org?format=json').json()   
+    ip = response["ip"]
+    loc = geocoder.ip(ip)
+    
+    return loc.latlng#, loc.city
 
 #hier wird das Wetter am gesuchten Standort ausfindig gemacht
 
