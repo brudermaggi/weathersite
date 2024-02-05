@@ -1,5 +1,8 @@
 {% extends "weatherapp/base.html" %}
 
 {% block content %}
-    Das Wetter ist gut
+    <h1>Wetterbericht</h1>
+    <p>Wetter: {{ weather }}</p>
+    <p>Temperatur: {{ main.temp }} °C</p>
+    <p>Luftfeuchtigkeit: {{ main.humidity }}%</p>
 {% endblock %}
