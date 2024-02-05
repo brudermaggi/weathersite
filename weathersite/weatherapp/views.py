@@ -10,7 +10,8 @@ def index(request):
     weather = get_current_weather(location[0], location[1], APIkey)
     context = {
         'weather': weather['weather'],
-        'main': weather['main']
+        'main': weather['main'],
+        'city': location[2]
     }
     return render(request, 'weatherapp/weather_content.html', context)
 
@@ -20,8 +21,9 @@ def get_location():
     response = requests.get('https://api64.ipify.org?format=json').json()   
     ip = response["ip"]
     loc = geocoder.ip(ip)
-    
-    return loc.latlng#, loc.city
+    location_data = loc.latlng
+    location_data.append(loc.city)
+    return location_data
 
 #hier wird das Wetter am gesuchten Standort ausfindig gemacht
 

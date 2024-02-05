@@ -1,8 +1,9 @@
 {% extends "weatherapp/base.html" %}
 
 {% block content %}
-    <h1>Wetterbericht</h1>
-    <p>Wetter: {{ weather }}</p>
-    <p>Temperatur: {{ main.temp }} °C</p>
-    <p>Luftfeuchtigkeit: {{ main.humidity }}%</p>
+    <h1>Weather report</h1>
+    <p>Weather: {{ weather.0.description }}</p>
+    <p>Temperature: {{ main.temp }} °C</p>
+    <p>Humidity: {{ main.humidity }}%</p>
+    <p>Location: {{ city }}</p>
 {% endblock %}
