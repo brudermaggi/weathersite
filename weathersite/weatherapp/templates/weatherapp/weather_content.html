@@ -6,4 +6,12 @@
     <p>Temperature: {{ main.temp }} °C</p>
     <p>Humidity: {{ main.humidity }}%</p>
     <p>Location: {{ city }}</p>
+
+    <p>
+        <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Suchen</button>
+        </form>
+    </p>
 {% endblock %}

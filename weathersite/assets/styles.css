@@ -1,3 +1,8 @@
+*{
+    font-family: Arial;
+}
+
 body{
-    background: lightgrey;
+    padding-top: 20px;
+    padding-left: 80px;
 }
