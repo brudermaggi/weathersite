@@ -66,11 +66,46 @@ In jedem Unterbereich werden die Punkte (gerne auch Links ins GIT) erklärt, wie
 
 # - Datentypen
 
+```python
+
+STATIC_URL = 'static/'
+
+```
+
 # - E/A-Operationen und Dateiverarbeitung
+
+```python
+
+if request.method == 'POST':
+    form = LocationForm(request.POST)
+else:
+    form = LocationForm()
+
+```
 
 # - Operatoren
 
+```python
+
+def get_location():
+    response = requests.get('https://api64.ipify.org?format=json').json()   
+    ip = response["ip"]
+    loc = geocoder.ip(ip)
+    location_data = loc.latlng
+    location_data.append(loc.city)
+    return location_data
+
+```
+
 # - Kontrollstrukturen
+
+```python
+
+if form.is_valid():
+    location = form.cleaned_data['location']
+    location_info = get_location_info(location)
+
+```
 
 # - Funktionen
 
@@ -89,4 +124,22 @@ def get_current_weather(lat, lon, Key):
 
 # - Stringverarbeitung
 
+```python
+
+response  = requests.get(f"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={Key}&units=metric").json()
+
+```
+
 # - Strukturierte Datentypen
+
+```python
+
+context = {
+                'weather': weather.get('weather', {}),
+                'main': weather.get('main', {}),
+                'city': location,
+                'form': form
+            }
+return render(request, 'weatherapp/weather_content.html', context)
+
+```
