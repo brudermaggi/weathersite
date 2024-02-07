@@ -8,48 +8,47 @@ import geocoder
 
 APIkey = "c4bb3958e6d110d2e0036c0027da9ad0"
 
-def index(request):
+#Diese Funktion wird vom Routing der Website aufgerufen, wenn eine Anfrage eingeht. Das Formular wird geladen und das HTML-Template wird mit den Wetterdaten gerendert.
+
+def indexview(request):
     if request.method == 'POST':
         form = LocationForm(request.POST)
-        if form.is_valid():
-            location = form.cleaned_data['location']
-            location_info = get_location_info(location)
-            if location_info:
-                latitude = location_info['latitude']
-                longitude = location_info['longitude']
-                location = location_info['city']
-                weather = get_current_weather(latitude, longitude, APIkey)
-                form = LocationForm()
-                context = {
-                    'weather': weather['weather'],
-                    'main': weather['main'],
-                    'city': location,
-                    'form': form
-                }
-                return render(request, 'weatherapp/weather_content.html', context)
-            else:
-                form = LocationForm()
-                location = get_location()
-                weather = get_current_weather(location[0], location[1], APIkey)
-                messages.error(request, "The searched city was not found, please try again.")
-                context = {
-                    'weather': weather['weather'],
-                    'main': weather['main'],
-                    'city': location[2],
-                    'form': form
-                }
-                return render(request, 'weatherapp/weather_content.html', context)
     else:
         form = LocationForm()
+
+    if form.is_valid():
+        location = form.cleaned_data['location']
+        location_info = get_location_info(location)
+        if location_info:
+            latitude = location_info['latitude']
+            longitude = location_info['longitude']
+            location = location_info['city']
+            weather = get_current_weather(latitude, longitude, APIkey)
+            context = {
+                'weather': weather.get('weather', {}),
+                'main': weather.get('main', {}),
+                'city': location,
+                'form': form
+            }
+            return render(request, 'weatherapp/weather_content.html', context)
+        else:
+            location = get_location()
+            messages.error(request, "The searched city was not found, please try again.")
+            latitude, longitude = location[:2]
+
+        weather = get_current_weather(latitude, longitude, APIkey)
+    else:
         location = get_location()
         weather = get_current_weather(location[0], location[1], APIkey)
-        context = {
-            'weather': weather['weather'],
-            'main': weather['main'],
-            'city': location[2],
-            'form': form
-        }
-        return render(request, 'weatherapp/weather_content.html', context)
+
+    context = {
+        'weather': weather.get('weather', {}),
+        'main': weather.get('main', {}),
+        'city': location[2],
+        'form': form
+    }
+
+    return render(request, 'weatherapp/weather_content.html', context)
 
 #hier wird der jetzige Standort ausfindig gemacht
 

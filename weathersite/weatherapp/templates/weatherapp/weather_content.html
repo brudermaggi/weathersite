@@ -2,10 +2,10 @@
 
 {% block content %}
     <h1>Weather report</h1>
+    <h2>{{ city }}</h2>
     <p>Weather: {{ weather.0.description }}</p>
     <p>Temperature: {{ main.temp }} °C</p>
     <p>Humidity: {{ main.humidity }}%</p>
-    <p>Location: {{ city }}</p>
 
     <p>
         <form method="post">
