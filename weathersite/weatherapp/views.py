@@ -27,14 +27,14 @@ def indexview(request):
             location = location.split(", ")[0]
             weatheractual = get_current_weather(latitude, longitude, APIkey)
             context_forecast = get_weather_forecast(latitude, longitude, APIkey)
-            context_actual = {
+            context = {
                 'weather': weatheractual.get('weather', {}),
                 'main': weatheractual.get('main', {}),
                 'city': location,
+                'forecast': context_forecast,
                 'form': form
             }
-            combined_context = {**context_actual, **context_forecast}
-            return render(request, 'weatherapp/weather_content.html', combined_context)
+            return render(request, 'weatherapp/weather_content.html', context)
         else:
             location = get_location()
             messages.error(request, "The searched city was not found, please try again.")
@@ -46,14 +46,14 @@ def indexview(request):
         location = get_location()
         weatheractual = get_current_weather(location[0], location[1], APIkey)
         context_forecast = get_weather_forecast(location[0], location[1], APIkey)
-    context_actual = {
+    context = {
         'weather': weatheractual.get('weather', {}),
         'main': weatheractual.get('main', {}),
         'city': location[2],
+        'forecast': context_forecast,
         'form': form
     }
-    combined_context = {**context_actual, **context_forecast}
-    return render(request, 'weatherapp/weather_content.html', combined_context)
+    return render(request, 'weatherapp/weather_content.html', context)
 
 #hier wird der jetzige Standort ausfindig gemacht
 
