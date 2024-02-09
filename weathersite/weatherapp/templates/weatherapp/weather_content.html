@@ -2,10 +2,271 @@
 
 {% block content %}
     <h1>Weather report</h1>
-    <h2>{{ city }}</h2>
-    <p>Weather: {{ weather.0.description }}</p>
-    <p>Temperature: {{ main.temp }} °C</p>
-    <p>Humidity: {{ main.humidity }}%</p>
+    <h2>Now</h2>
+    <h3>{{ city }}</h3>
+    <p>Weather: {{ weather.0.description }}<br>
+        Temperature: {{ main.temp }} °C <br>
+        Humidity: {{ main.humidity }}%</p>
+
+    <h2>Forecast</h2>
+   <table>
+        <thead>
+            <tr>
+                <th>Datum</th>
+                <th>Temperatur (°C)</th>
+                <th>Wetter</th>
+                <th>Niederschlag (mm)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+    <td>{{ date_list.0 }}</td>
+    <td>{{ temp_list.0 }}</td>
+    <td>{{ weather_list.0 }}</td>
+    <td>{{ rain_list.0 }}</td>
+</tr>
+<tr>
+    <td>{{ date_list.1 }}</td>
+    <td>{{ temp_list.1 }}</td>
+    <td>{{ weather_list.1 }}</td>
+    <td>{{ rain_list.1 }}</td>
+</tr>
+<tr>
+    <td>{{ date_list.2 }}</td>
+    <td>{{ temp_list.2 }}</td>
+    <td>{{ weather_list.2 }}</td>
+    <td>{{ rain_list.2 }}</td>
+</tr>
+<tr>
+    <td>{{ date_list.3 }}</td>
+    <td>{{ temp_list.3 }}</td>
+    <td>{{ weather_list.3 }}</td>
+    <td>{{ rain_list.3 }}</td>
+</tr>
+<tr>
+    <td>{{ date_list.4 }}</td>
+    <td>{{ temp_list.4 }}</td>
+    <td>{{ weather_list.4 }}</td>
+    <td>{{ rain_list.4 }}</td>
+</tr>
+<tr>
+    <td>{{ date_list.5 }}</td>
+    <td>{{ temp_list.5 }}</td>
+    <td>{{ weather_list.5 }}</td>
+    <td>{{ rain_list.5 }}</td>
+</tr>
+<tr>
+    <td>{{ date_list.6 }}</td>
+    <td>{{ temp_list.6 }}</td>
+    <td>{{ weather_list.6 }}</td>
+    <td>{{ rain_list.6 }}</td>
+</tr>
+<tr>
+    <td>{{ date_list.7 }}</td>
+    <td>{{ temp_list.7 }}</td>
+    <td>{{ weather_list.7 }}</td>
+    <td>{{ rain_list.7 }}</td>
+</tr>
+<tr>
+    <td>{{ date_list.8 }}</td>
+    <td>{{ temp_list.8 }}</td>
+    <td>{{ weather_list.8 }}</td>
+    <td>{{ rain_list.8 }}</td>
+</tr>
+<tr>
+    <td>{{ date_list.9 }}</td>
+    <td>{{ temp_list.9 }}</td>
+    <td>{{ weather_list.9 }}</td>
+    <td>{{ rain_list.9 }}</td>
+</tr>
+<tr>
+    <td>{{ date_list.10 }}</td>
+    <td>{{ temp_list.10 }}</td>
+    <td>{{ weather_list.10 }}</td>
+    <td>{{ rain_list.10 }}</td>
+</tr>
+<tr>
+    <td>{{ date_list.11 }}</td>
+    <td>{{ temp_list.11 }}</td>
+    <td>{{ weather_list.11 }}</td>
+    <td>{{ rain_list.11 }}</td>
+</tr>
+<tr>
+    <td>{{ date_list.12 }}</td>
+    <td>{{ temp_list.12 }}</td>
+    <td>{{ weather_list.12 }}</td>
+    <td>{{ rain_list.12 }}</td>
+</tr>
+<tr>
+    <td>{{ date_list.13 }}</td>
+    <td>{{ temp_list.13 }}</td>
+    <td>{{ weather_list.13 }}</td>
+    <td>{{ rain_list.13 }}</td>
+</tr>
+<tr>
+    <td>{{ date_list.14 }}</td>
+    <td>{{ temp_list.14 }}</td>
+    <td>{{ weather_list.14 }}</td>
+    <td>{{ rain_list.14 }}</td>
+</tr>
+<tr>
+    <td>{{ date_list.15 }}</td>
+    <td>{{ temp_list.15 }}</td>
+    <td>{{ weather_list.15 }}</td>
+    <td>{{ rain_list.15 }}</td>
+</tr>
+<tr>
+    <td>{{ date_list.16 }}</td>
+    <td>{{ temp_list.16 }}</td>
+    <td>{{ weather_list.16 }}</td>
+    <td>{{ rain_list.16 }}</td>
+</tr>
+<tr>
+    <td>{{ date_list.17 }}</td>
+    <td>{{ temp_list.17 }}</td>
+    <td>{{ weather_list.17 }}</td>
+    <td>{{ rain_list.17 }}</td>
+</tr>
+<tr>
+    <td>{{ date_list.18 }}</td>
+    <td>{{ temp_list.18 }}</td>
+    <td>{{ weather_list.18 }}</td>
+    <td>{{ rain_list.18 }}</td>
+</tr>
+<tr>
+    <td>{{ date_list.19 }}</td>
+    <td>{{ temp_list.19 }}</td>
+    <td>{{ weather_list.19 }}</td>
+    <td>{{ rain_list.19 }}</td>
+</tr>
+<tr>
+    <td>{{ date_list.20 }}</td>
+    <td>{{ temp_list.20 }}</td>
+    <td>{{ weather_list.20 }}</td>
+    <td>{{ rain_list.20 }}</td>
+</tr>
+<tr>
+    <td>{{ date_list.21 }}</td>
+    <td>{{ temp_list.21 }}</td>
+    <td>{{ weather_list.21 }}</td>
+    <td>{{ rain_list.21 }}</td>
+</tr>
+<tr>
+    <td>{{ date_list.22 }}</td>
+    <td>{{ temp_list.22 }}</td>
+    <td>{{ weather_list.22 }}</td>
+    <td>{{ rain_list.22 }}</td>
+</tr>
+<tr>
+    <td>{{ date_list.23 }}</td>
+    <td>{{ temp_list.23 }}</td>
+    <td>{{ weather_list.23 }}</td>
+    <td>{{ rain_list.23 }}</td>
+</tr>
+<tr>
+    <td>{{ date_list.24 }}</td>
+    <td>{{ temp_list.24 }}</td>
+    <td>{{ weather_list.24 }}</td>
+    <td>{{ rain_list.24 }}</td>
+</tr>
+<tr>
+    <td>{{ date_list.25 }}</td>
+    <td>{{ temp_list.25 }}</td>
+    <td>{{ weather_list.25 }}</td>
+    <td>{{ rain_list.25 }}</td>
+</tr>
+<tr>
+    <td>{{ date_list.26 }}</td>
+    <td>{{ temp_list.26 }}</td>
+    <td>{{ weather_list.26 }}</td>
+    <td>{{ rain_list.26 }}</td>
+</tr>
+<tr>
+    <td>{{ date_list.27 }}</td>
+    <td>{{ temp_list.27 }}</td>
+    <td>{{ weather_list.27 }}</td>
+    <td>{{ rain_list.27 }}</td>
+</tr>
+<tr>
+    <td>{{ date_list.28 }}</td>
+    <td>{{ temp_list.28 }}</td>
+    <td>{{ weather_list.28 }}</td>
+    <td>{{ rain_list.28 }}</td>
+</tr>
+<tr>
+    <td>{{ date_list.29 }}</td>
+    <td>{{ temp_list.29 }}</td>
+    <td>{{ weather_list.29 }}</td>
+    <td>{{ rain_list.29 }}</td>
+</tr>
+<tr>
+    <td>{{ date_list.30 }}</td>
+    <td>{{ temp_list.30 }}</td>
+    <td>{{ weather_list.30 }}</td>
+    <td>{{ rain_list.30 }}</td>
+</tr>
+<tr>
+    <td>{{ date_list.31 }}</td>
+    <td>{{ temp_list.31 }}</td>
+    <td>{{ weather_list.31 }}</td>
+    <td>{{ rain_list.31 }}</td>
+</tr>
+<tr>
+    <td>{{ date_list.32 }}</td>
+    <td>{{ temp_list.32 }}</td>
+    <td>{{ weather_list.32 }}</td>
+    <td>{{ rain_list.32 }}</td>
+</tr>
+<tr>
+    <td>{{ date_list.33 }}</td>
+    <td>{{ temp_list.33 }}</td>
+    <td>{{ weather_list.33 }}</td>
+    <td>{{ rain_list.33 }}</td>
+</tr>
+<tr>
+    <td>{{ date_list.34 }}</td>
+    <td>{{ temp_list.34 }}</td>
+    <td>{{ weather_list.34 }}</td>
+    <td>{{ rain_list.34 }}</td>
+</tr>
+<tr>
+    <td>{{ date_list.35 }}</td>
+    <td>{{ temp_list.35 }}</td>
+    <td>{{ weather_list.35 }}</td>
+    <td>{{ rain_list.35 }}</td>
+</tr>
+<tr>
+    <td>{{ date_list.36 }}</td>
+    <td>{{ temp_list.36 }}</td>
+    <td>{{ weather_list.36 }}</td>
+    <td>{{ rain_list.36 }}</td>
+</tr>
+<tr>
+    <td>{{ date_list.37 }}</td>
+    <td>{{ temp_list.37 }}</td>
+    <td>{{ weather_list.37 }}</td>
+    <td>{{ rain_list.37 }}</td>
+</tr>
+<tr>
+    <td>{{ date_list.38 }}</td>
+    <td>{{ temp_list.38 }}</td>
+    <td>{{ weather_list.38 }}</td>
+    <td>{{ rain_list.38 }}</td>
+</tr>
+<tr>
+    <td>{{ date_list.39 }}</td>
+    <td>{{ temp_list.39 }}</td>
+    <td>{{ weather_list.39 }}</td>
+    <td>{{ rain_list.39 }}</td>
+</tr>
+<tr>
+    <td>{{ date_list.40 }}</td>
+    <td>{{ temp_list.40 }}</td>
+    <td>{{ weather_list.40 }}</td>
+    <td>{{ rain_list.40 }}</td>
+</tr>
+        </tbody>
+    </table>
 
     <p>
         <form method="post">

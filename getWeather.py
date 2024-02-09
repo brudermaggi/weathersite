@@ -44,6 +44,7 @@ def get_weather_forecast(lat, lon, Key):
         "rain_list": rain_list
     }
     return forecast
+
 forecast = get_weather_forecast(49.4925, 9.7736, APIkey)
 print(forecast)
 #print(get_current_weather(49.4925, 9.7736, APIkey))

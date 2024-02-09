@@ -1,5 +1,6 @@
 *{
     font-family: Arial;
+    background-color: #fff3cd;
 }
 
 body{
@@ -22,4 +23,25 @@ body{
 .messages li {
     list-style: none;
     margin: 5px 0;
+}
+
+table {
+    font-family: Arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
 }
