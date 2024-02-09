@@ -151,11 +151,10 @@ def get_weather_forecast(lat, lon, Key):
         sorted_forecast2[i] = sorted_list
 
     # Sorted forecast list in list
-    sorted_forecast_list_in_list = []
     sorted_forecast_main_list = []
 
     for i in range(0, 40):
-        sorted_forecast_list_in_list.clear()
+        sorted_forecast_list_in_list = []
         sorted_forecast_list_in_list.append(response["list"][i]["dt_txt"])
         sorted_forecast_list_in_list.append(response["list"][i]["main"]["temp"])
         sorted_forecast_list_in_list.append(response["list"][i]["weather"][0]["main"])

@@ -19,11 +19,46 @@
             </tr>
         </thead>
         <tbody>
-            {% for item1 in forecast %}
+            {% for item in forecast %}
             <tr>
-                {% for item2 in item1 %}
-                <td>{{item2}}</td>
-                {% endfor %}
+                <td>{{item.0}}</td>
+                <td>{{item.1}}</td>
+                <td>
+                    {% if item.2 == "Thunderstorm" %}
+                        {% static 'thunderstorm.svg' %}
+                    {% elif item.2 == "Drizzle" %}
+                        {% static 'drizzle.svg' %}
+                    {% elif item.2 == "Rain" %}
+                        {% static 'rain.svg' %}
+                    {% elif item.2 == "Snow" %}
+                        {% static 'snow.svg' %}
+                    {% elif item.2 == "Mist" %}
+                        {% static 'mist.svg' %}
+                    {% elif item.2 == "Smoke" %}
+                        {% static 'smoke.svg' %}
+                    {% elif item.2 == "Haze" %}
+                        {% static 'haze.svg' %}
+                    {% elif item.2 == "Dust" %}
+                        {% static 'dust.svg' %}
+                    {% elif item.2 == "Fog" %}
+                        {% static 'fog.svg' %}
+                    {% elif item.2 == "Sand" %}
+                        {% static 'sand.svg' %}
+                    {% elif item.2 == "Ash" %}
+                        {% static 'ash.svg' %}
+                    {% elif item.2 == "Squall" %}
+                        {% static 'squall.svg' %}
+                    {% elif item.2 == "Tornado" %}
+                        {% static 'tornado.svg' %}
+                    {% elif item.2 == "Clear" %}
+                        {% static 'clear.svg' %}
+                    {% elif item.2 == "Clouds" %}
+                        {% static 'clouds.svg' %}
+                    {% else %}
+                        error
+                    {% endif %}
+                </td>
+                <td>{{item.3}}</td>
             </tr>
             {% endfor %}
         </tbody>
