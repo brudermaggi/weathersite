@@ -3,9 +3,7 @@ from django.shortcuts import render, redirect, reverse
 from django.contrib import messages
 from geopy.geocoders import Nominatim
 from .forms import LocationForm
-import requests
-import geocoder
-import os
+import requests, os, geocoder
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -26,6 +24,7 @@ def indexview(request):
             latitude = location_info['latitude']
             longitude = location_info['longitude']
             location = location_info['city']
+            location = location.split(", ")[0]
             weatheractual = get_current_weather(latitude, longitude, APIkey)
             context_forecast = get_weather_forecast(latitude, longitude, APIkey)
             context_actual = {
@@ -41,7 +40,8 @@ def indexview(request):
             messages.error(request, "The searched city was not found, please try again.")
             latitude, longitude = location[:2]
 
-        weather = get_current_weather(latitude, longitude, APIkey)
+        weatheractual = get_current_weather(latitude, longitude, APIkey)
+        context_forecast = get_weather_forecast(latitude, longitude, APIkey)
     else:
         location = get_location()
         weatheractual = get_current_weather(location[0], location[1], APIkey)

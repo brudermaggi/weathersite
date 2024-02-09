@@ -1,5 +1,5 @@
 *{
-    background-color: #fff3cd;
+    background-color: #e7f0fd;
     font-family: Arial;
 }
 
@@ -44,4 +44,36 @@ tr:nth-child(even) {
 th {
     background-color: #4CAF50;
     color: white;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button[type="submit"] {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
 }
