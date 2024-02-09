@@ -49,8 +49,9 @@ In jedem Unterbereich werden die Punkte (gerne auch Links ins GIT) erklärt, wie
 # Sie können sich selbstständig in Entwicklungsumgebungen und Technologien einarbeiten und diese zur Programmierung und Fehlerbehebung einsetzen. (10)
 
 <!-- Which technology did you learn outside of the teacher given input -->
-
+Ich habe zu Beginn dieses Projekts angefangen, PyCharm zu verwenden. Vorher habe ich Visual Studio Code für alles verwendet und war zufrieden damit, aber dann erfuhr ich, dass die Produkte von JetBrains für Studenten kostenlos sind. Also bekam ich Zugang zu den Produkten und begann damit zu arbeiten. Die KI-Unterstützung ist sehr hilfreich beim Coden und erspart einem Zeit. Was ich allerdings nicht so gut finde, ist dass PyCharm in jeder Kleinigkeit einen Fehler und sich beschwert. Das verunsichert einen manchmal, jedoch gibt es für manche Fehler einfach keine Lösung, anscheinend muss man sich zufrieden stellen, dass ab und zu eine Line rot oder gelb unterstrichen ist. Was ich allerdings viel besser finde als bei VSC ist die Anbindung an Github, ich finde das verwalten eines repopsitorys auf dem lokalen PC viel einfacher, das wird bei PyCharm über einen extra Ordner mit Meta-Daten im Repository realisiert.
 <!-- Did you get help from someone in the classroom (get a support message here from the person who helped you) -->
+Ich habe mir zu PyCharm alles selber beigebracht, wenn ich mal Hilfe gebraucht habe, habe ich mir einen Stackoverflow-Beitrag oder ein Youtube-Video angeschaut.
 
 ## ÜBERGREIFENDE HANDLUNGSKOMPETENZ (30 Punkte)
 
@@ -111,14 +112,17 @@ if form.is_valid():
 
 ```python
 
-def get_current_weather(lat, lon, Key):
-    response  = requests.get(f"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={Key}&units=metric").json()
-
-    current_weather = {
-        "weather": response.get("weather"),
-        "main": response.get("main")
-    }
-    return current_weather
+def get_location_info(location):
+    geolocator = Nominatim(user_agent="myapp")
+    location_data = geolocator.geocode(location)
+    if location_data:
+        return {
+            'latitude': location_data.latitude,
+            'longitude': location_data.longitude,
+            'city': location_data.address
+        }
+    else:
+        return None
 
 ```
 
