@@ -88,11 +88,11 @@ def get_current_weather(lat, lon, Key):
     }
     return current_weather
 
-
 def get_weather_forecast(lat, lon, Key):
     response = requests.get(
         f"https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={Key}&units=metric").json()
-
+    # Das hier ist sozusagen ein Prozess, wobei ich den Code so angepasst habe, sodass wir das gewünschte Ergebnis haben
+'''
     temp_list = []
     rain_list = []
     date_list = []
@@ -149,8 +149,10 @@ def get_weather_forecast(lat, lon, Key):
             sorted_list.append(0)
 
         sorted_forecast2[i] = sorted_list
-
+'''
     # Sorted forecast list in list
+    # Mir sind hier die Namen für Variablen ausgegangen, weshalb es so lange namen geworden sind.
+    # Es sind nur interne Variablen, deshalb ich diese nicht oft brauche und es deshalb mehr oder weniger egal ist
     sorted_forecast_main_list = []
 
     for i in range(0, 40):
@@ -167,6 +169,6 @@ def get_weather_forecast(lat, lon, Key):
         sorted_forecast_main_list.append(sorted_forecast_list_in_list)
 
     # sorted_forecast follows this Syntax:
-    # [Date and Time, temperatur, weather Type, precipitation, iteration, Brakeword]
+    # [Date and Time, temperatur, weather Type, precipitation]
 
     return sorted_forecast_main_list
