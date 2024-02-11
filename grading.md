@@ -39,9 +39,27 @@ def get_location_info(location):
 
 <!-- Anhand von commits zeigen, wie sie im Projekt einen Beitrag geleistet haben-->
 
+brudermaggi:    Jonathan Frank
+stechmo:        Moritz Stecher
+
+Während Moritz immer im Projekt gearbeitet hat und deshalb viele Commits gemacht hat, hat Jonathan in einer lokalen Umgebung die ganzen Funktionen geschrieben und getestet. Deshalb hat Moritz mehr Commits im Git-Verlauf.
+
+![image](https://github.com/brudermaggi/weathersite/assets/151533450/73bf3f7d-1cd7-4e4b-9c59-0fca050a8ef3)
+
+
 ### Sie kennen verschiedene Datenstrukturen und können diese exemplarisch anwenden. (10)
 
 <!-- Eine Stelle aus ihrem Programmieren wählen auf die sie besonders stolz sind und begründen -->
+
+```python
+def get_location():
+    response = requests.get('https://api64.ipify.org?format=json').json()   
+    ip = response["ip"]
+    loc = geocoder.ip(ip)
+    location_data = loc.latlng
+    location_data.append(loc.city)
+    return location_data
+```
 
 ## METHODENKOMPETENZ (10 Punkte)
 
