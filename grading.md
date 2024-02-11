@@ -14,6 +14,27 @@ In jedem Unterbereich werden die Punkte (gerne auch Links ins GIT) erklärt, wie
 
 <!-- Eine Stelle aus ihrem Programmieren wählen auf die sie besonders stolz sind und begründen -->
 
+Im folgenden Code-Beispiel sieht man eine selbstgeschriebene Funktion, in der z.B. eine If-Anfrage angewendet wird und ein Python.Modul verwendet wird. Dieses Modul gibt einem anhand eines Ortnamens latitude, longitude und des Ortnamen zurück. Dies wird realisiert, indem ein ganzes Dictionary zurückgegeben wird aus der Funktion. Konnte die Funktion anhand des location-Parameters keinen Ort finden, so gibt die Funktion None zurück. In diesem Ausschnitt werden also die für die Python-Syntax relevanten Themen dargestellt:
+- Funktionsdefinition
+- if-else
+- instanziierung eines Objekts
+- Methodenaufruf
+- Dictionary-Erstellung
+- Rückgabewert einer Funktion
+
+```python
+def get_location_info(location):
+    geolocator = Nominatim(user_agent="myapp")
+    location_data = geolocator.geocode(location)
+    if location_data:
+        return {
+            'latitude': location_data.latitude,
+            'longitude': location_data.longitude,
+            'city': location_data.address
+        }
+    else:
+        return None
+```
 ### Sie können ein größeres Programm selbständig entwerfen, programmieren und auf Funktionsfähigkeit testen (Das Projekt im Team) (10)
 
 <!-- Anhand von commits zeigen, wie sie im Projekt einen Beitrag geleistet haben-->
@@ -65,29 +86,43 @@ Ich habe mir zu PyCharm alles selber beigebracht, wenn ich mal Hilfe gebraucht h
 
 ### - Algorithmenbeschreibung
 
+```python
+from functools import lru_cache
+
+@lru_cache
+def fibonacci(n):
+    if n < 2:
+        return n
+    return fibonacci(n-1) + fibonacci(n-2)
+
+print(fibonacci(10))  # Ruft die fibonacci-Funktion für n=10 auf
+print(fibonacci(10))  # Verwendet das zwischengespeicherte Ergebnis für n=10
+```
+
 ### - Datentypen
 
 ```python
-
-STATIC_URL = 'static/'
-
+context = {
+        'weather': weatheractual.get('weather', {}),
+        'main': weatheractual.get('main', {}),
+        'city': location[2],
+        'forecast': context_forecast,
+        'form': form
+        }
 ```
 
 ### - E/A-Operationen und Dateiverarbeitung
 
 ```python
-
 if request.method == 'POST':
     form = LocationForm(request.POST)
 else:
     form = LocationForm()
-
 ```
 
 ### - Operatoren
 
 ```python
-
 def get_location():
     response = requests.get('https://api64.ipify.org?format=json').json()   
     ip = response["ip"]
@@ -95,23 +130,19 @@ def get_location():
     location_data = loc.latlng
     location_data.append(loc.city)
     return location_data
-
 ```
 
 ### - Kontrollstrukturen
 
 ```python
-
 if form.is_valid():
     location = form.cleaned_data['location']
     location_info = get_location_info(location)
-
 ```
 
 ### - Funktionen
 
 ```python
-
 def get_location_info(location):
     geolocator = Nominatim(user_agent="myapp")
     location_data = geolocator.geocode(location)
@@ -123,27 +154,23 @@ def get_location_info(location):
         }
     else:
         return None
-
 ```
 
 ### - Stringverarbeitung
 
 ```python
-
-response  = requests.get(f"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={Key}&units=metric").json()
-
+response = requests.get(f"https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={Key}&units=metric").json()
 ```
 
 ### - Strukturierte Datentypen
 
 ```python
-
 context = {
-                'weather': weather.get('weather', {}),
-                'main': weather.get('main', {}),
+                'weather': weatheractual.get('weather', {}),
+                'main': weatheractual.get('main', {}),
                 'city': location,
+                'forecast': context_forecast,
                 'form': form
             }
 return render(request, 'weatherapp/weather_content.html', context)
-
 ```
