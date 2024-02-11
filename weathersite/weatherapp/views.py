@@ -151,6 +151,8 @@ def get_weather_forecast(lat, lon, Key):
         sorted_forecast2[i] = sorted_list
 '''
     # Sorted forecast list in list
+    # Mir sind hier die Namen für Variablen ausgegangen, weshalb es so lange namen geworden sind.
+    # Es sind nur interne Variablen, deshalb ich diese nicht oft brauche und es deshalb mehr oder weniger egal ist
     sorted_forecast_main_list = []
 
     for i in range(0, 40):
