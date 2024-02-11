@@ -49,13 +49,18 @@ def get_location_info(location):
 
 <!-- Beweise anbringen für Nutzen folgender Tools (können links, screenshots und screnncasts sein)-->
 
-<!-- GIT -->https://github.com/brudermaggi/weathersite
+<!-- GIT --> 
+Unser Repository:
+https://github.com/brudermaggi/weathersite
 
-<!-- VSC -->![grafik](https://github.com/brudermaggi/weathersite/assets/152855041/4640f287-8886-4bde-9fcb-6f2654502d00)
+<!-- VSC --> 
+![grafik](https://github.com/brudermaggi/weathersite/assets/152855041/4640f287-8886-4bde-9fcb-6f2654502d00)
 
 <!-- Codepilot -->
 
-<!-- other -->https://poe.com/PythonAIChat
+<!-- other -->
+Für Fragen haben wir einen extra für Python gelernten ChatBot benutzt:
+https://poe.com/PythonAIChat
 
 ## PERSONALE UND SOZIALE KOMPETENZ (20 Punkte)
 
@@ -100,9 +105,18 @@ Der Code ist nicht sehr Komplex, trotzdem hat der Code 3 Iterationen gebraucht, 
 ```
 
 <!-- Where were the problems with your implementation, timeline, functionality, team management (describe, analyse, reflect from past to future, link if relevant) -->
-Das Schwerste war meiner Meinung nach die Themenfindung, es war schwer ein Projekt zu finden, welches nicht zu schwer ist und nicht zu leicht ist, damit wir weder zu lange brauchen noch zu schnell fertig sind. Als wir unsere Projektidee hatten setzten wir uns daran zu schauen welche Features wir brauchen, wollen und welche ein nettes extra sind.![grafik](https://github.com/brudermaggi/weathersite/assets/152855041/5d10704b-707e-4faf-8a90-4d0cf14e06c9)
-Unser Projekt haben wir dann in verschedene Arbeitsschritte gegliedert und mithilfe eines KANBAN-Boards abgearbeitet.![grafik](https://github.com/brudermaggi/weathersite/assets/152855041/4f8b9ecf-a1f5-4a88-9eb8-8d64a640dd79)
-Bei der BEarbeitung des Projetk sind wir selbstverständlich auch auf Probleme gestoßen, die wir ebenfalls festgehalten haben:![grafik](https://github.com/brudermaggi/weathersite/assets/152855041/287a4669-61ab-49e2-a1ff-4036d2912d81)
+Das Schwerste war meiner Meinung nach die Themenfindung, es war schwer ein Projekt zu finden, welches nicht zu schwer ist und nicht zu leicht ist, damit wir weder zu lange brauchen noch zu schnell fertig sind. Als wir unsere Projektidee hatten setzten wir uns daran zu schauen welche Features wir brauchen, wollen und welche ein nettes extra sind.
+
+![grafik](https://github.com/brudermaggi/weathersite/assets/152855041/5d10704b-707e-4faf-8a90-4d0cf14e06c9)
+
+Unser Projekt haben wir dann in verschedene Arbeitsschritte gegliedert und mithilfe eines KANBAN-Boards abgearbeitet.
+
+![grafik](https://github.com/brudermaggi/weathersite/assets/152855041/4f8b9ecf-a1f5-4a88-9eb8-8d64a640dd79)
+
+Bei der Bearbeitung des Projetk sind wir selbstverständlich auch auf Probleme gestoßen, die wir ebenfalls festgehalten haben:
+
+![grafik](https://github.com/brudermaggi/weathersite/assets/152855041/287a4669-61ab-49e2-a1ff-4036d2912d81)
+
 So haben wir gemerkt, dass es einfacher und sicherer ist den Standort ohne eine API zu ermitteln. Aber auch Probleme mit der Dartstellung von Browsern haben wir festgehalten.
 
 Reflektiert kann man sagen, dass wir viel Fortschritt gemacht haben, sowohl durch das erlernen neuer Skills, als auch das anwenden neu gelernter Techniken.
