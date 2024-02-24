@@ -71,10 +71,9 @@ def get_location():
 Unser Repository:
 https://github.com/brudermaggi/weathersite
 
-Git Moritz Stecher
 
+#### Git Moritz Stecher
 Git zum programmieren: https://github.com/stechmo/LearningPython
-
 Git für Diskussionen: https://github.com/stechmo/ProgrammingMoritz
 
 <!-- VSC --> 
