@@ -114,6 +114,8 @@ def get_weather_forecast(lat, lon, Key):
 
     return sorted_forecast_main_list
     # Das hier ist sozusagen ein Prozess, wobei ich den Code so angepasst habe, sodass wir das gewünschte Ergebnis haben
+
+
 '''
     temp_list = []
     rain_list = []
