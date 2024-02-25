@@ -76,6 +76,10 @@ https://github.com/brudermaggi/weathersite
 Git zum programmieren: https://github.com/stechmo/LearningPython
 Git für Diskussionen: https://github.com/stechmo/ProgrammingMoritz
 
+### Git Jonathan Frank
+Git zum programmieren: https://github.com/brudermaggi/codespace-jupyter
+Link zur Discussion: https://github.com/brudermaggi/codespace-jupyter/discussions
+
 <!-- VSC --> 
 ![grafik](https://github.com/brudermaggi/weathersite/assets/152855041/4640f287-8886-4bde-9fcb-6f2654502d00)
 
