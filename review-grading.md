@@ -2,8 +2,10 @@
 
 
 # Grading Criteria Programmieren T3INF1004
-In jedem Unterbereich werden die Punkte (gerne auch Links ins GIT) erklärt, wie das LO erreicht worden ist.
-Alle Kriterien betreffen nur die Projektarbeit. Beweismaterial kommt aus dem Gruppenprojekt.
+
+Dieses Review ist für die Gruppe "Discord-ToDo-List":
+
+https://github.com/D4C4N/Discord-Reminder-Bot
 
 # FACHKOMPETENZ (40 Punkte)
 
