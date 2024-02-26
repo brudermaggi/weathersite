@@ -44,7 +44,8 @@ stechmo:        Moritz Stecher
 
 Während Moritz immer im Projekt gearbeitet hat und deshalb viele Commits gemacht hat, hat Jonathan in einer lokalen Umgebung die ganzen Funktionen geschrieben und getestet. Deshalb hat Moritz mehr Commits im Git-Verlauf.
 
-![image](https://github.com/brudermaggi/weathersite/assets/151533450/73bf3f7d-1cd7-4e4b-9c59-0fca050a8ef3)
+![grafik](https://github.com/brudermaggi/weathersite/assets/151533450/6cb99cb6-bcb0-43b0-a9b5-f347c1f1f697)
+
 
 
 ### Sie kennen verschiedene Datenstrukturen und können diese exemplarisch anwenden. (10)
