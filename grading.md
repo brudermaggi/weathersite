@@ -98,7 +98,10 @@ https://poe.com/PythonAIChat
 
 ### Sie können existierenden Code analysieren und beurteilen. (5)
 
-<!-- You have critiqued another group project. Link to your critique here (another wiki page on your git) and link the project -->https://github.com/brudermaggi/weathersite/wiki/Critique-for-group:-Discord%E2%80%90Reminder%E2%80%90Bot
+<!-- You have critiqued another group project. Link to your critique here (another wiki page on your git) and link the project -->
+https://github.com/brudermaggi/weathersite/blob/main/review-grading.md
+
+https://github.com/brudermaggi/weathersite/wiki/Critique-for-group:-Discord%E2%80%90Reminder%E2%80%90Bot
 
 ### Sie können sich selbstständig in Entwicklungsumgebungen und Technologien einarbeiten und diese zur Programmierung und Fehlerbehebung einsetzen. (10)
 
