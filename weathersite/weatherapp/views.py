@@ -12,11 +12,12 @@ APIkey = os.getenv("API_KEY")
 #Diese Funktion wird vom Routing der Website aufgerufen, wenn eine Anfrage eingeht. Das Formular wird geladen und das HTML-Template wird mit den Wetterdaten gerendert.
 
 def indexview(request):
+    #Formular aus forms.py in Variable abspeichern
     if request.method == 'POST':
         form = LocationForm(request.POST)
     else:
         form = LocationForm()
-
+    #wenn es sich um die Methode POST handelt, werden hier die Daten ausgewertet und Funktionen werden aufgerufen, um die Wetterdaten für den gesuchten Ort zu bekommen
     if form.is_valid():
         location = form.cleaned_data['location']
         location_info = get_location_info(location)
@@ -36,16 +37,19 @@ def indexview(request):
             }
             return render(request, 'weatherapp/weather_content.html', context)
         else:
+            #wenn der gesuchte Ort niciht gefunden werden konnte, werden hier die Standort-Daten abgefragt und eine Fehlermeldung wird ausgegeben
             location = get_location()
             messages.error(request, "The searched city was not found, please try again.")
             latitude, longitude = location[:2]
-
+        #Wetterdaten zum Standort werden abgefragt
         weatheractual = get_current_weather(latitude, longitude, APIkey)
         context_forecast = get_weather_forecast(latitude, longitude, APIkey)
     else:
+        #Wetterdaten zum Standort werden abgefragt
         location = get_location()
         weatheractual = get_current_weather(location[0], location[1], APIkey)
         context_forecast = get_weather_forecast(location[0], location[1], APIkey)
+    #Parameter für die Render-Funktion werden in einem Dictionary verpackt
     context = {
         'weather': weatheractual.get('weather', {}),
         'main': weatheractual.get('main', {}),
@@ -53,10 +57,10 @@ def indexview(request):
         'forecast': context_forecast,
         'form': form
     }
+    #HTML-Seite wird mit den Daten gerendert
     return render(request, 'weatherapp/weather_content.html', context)
 
 #hier wird der jetzige Standort ausfindig gemacht
-
 def get_location():
     response = requests.get('https://api64.ipify.org?format=json').json()   
     ip = response["ip"]
@@ -65,6 +69,7 @@ def get_location():
     location_data.append(loc.city)
     return location_data
 
+#Koordinaten für übergebenen Stadtnamen werden gesucht und zurückgegeben
 def get_location_info(location):
     geolocator = Nominatim(user_agent="myapp")
     location_data = geolocator.geocode(location)
@@ -78,7 +83,6 @@ def get_location_info(location):
         return None
 
 #hier wird das Wetter am gesuchten Standort ausfindig gemacht
-
 def get_current_weather(lat, lon, Key):
     response  = requests.get(f"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={Key}&units=metric").json()
 
@@ -88,6 +92,7 @@ def get_current_weather(lat, lon, Key):
     }
     return current_weather
 
+#hier wird die Wetter-Vorhersage von der API Aabgefragt
 def get_weather_forecast(lat, lon, Key):
     response = requests.get(
         f"https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={Key}&units=metric").json()
